@@ -24,7 +24,16 @@ public class PlayerController : MonoBehaviour
     public GameObject trashcan;
     public GameObject player;
     public BoxCollider2D TrashCollision;
-    public float Difficultyinteger;
+    //Key and Door
+    public bool haskey = false;
+    public GameObject keyinventory;
+    public GameObject keyground;
+    public BoxCollider2D DoorCollision;
+    //can throw
+    public GameObject Player;
+    public GameObject TheCan;
+    public bool CanThrowing;
+    public Rigidbody2D canRb;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +43,11 @@ public class PlayerController : MonoBehaviour
         PlayerState = GetComponent<SpriteRenderer>();
         TrashCollision = GetComponentInChildren<BoxCollider2D>();
         trashcan.SetActive(false);
+        keyinventory.SetActive(false);
+        //can throw
+        Player.GetComponent<GameObject>();
+        canRb.GetComponent<Rigidbody2D>();
+        CanThrowing = false;
     }
 
     // Update is called once per frame
@@ -97,7 +111,19 @@ public class PlayerController : MonoBehaviour
         }
         //Trash Movement
         trashcan.transform.position = player.transform.position + new Vector3(-0.6f, 1.8f, 0);
-        //Trash Throw
+        //Key Movement
+        keyinventory.transform.position = player.transform.position + new Vector3(0.6f, 1.8f, 0);
+        //Key Throw
+        if (Input.GetKeyDown(KeyCode.Space) && hastrash == true) 
+        {
+            trashcan.SetActive(false);
+            Debug.Log("Input Updated");
+            Instantiate(TheCan, Player.transform.position, TheCan.transform.rotation);
+            CanThrowing = true;
+            canRb.transform.Translate(new Vector3(2f, 0, 0));
+            hastrash = false;
+        }
+        //Door Unlock
 
     }
 
@@ -109,7 +135,7 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
         }
     }
-
+    //Can Collect
     private void OnTriggerStay2D(Collider2D collision)
     {
         if ((collision.gameObject.tag == "Trashcan") && Input.GetKeyDown(KeyCode.E) && !hastrash)
@@ -118,8 +144,20 @@ public class PlayerController : MonoBehaviour
             hastrash = true;
             trashcan.SetActive(true);
         }
+        if ((collision.gameObject.tag == "KeyGround") && Input.GetKeyDown(KeyCode.E) && !haskey)
+        {
+            Debug.Log("Key enabled");
+            haskey = true;
+            keyinventory.SetActive(true);
+            keyground.SetActive(false);
+        }
+        if ((collision.gameObject.tag == "Door") && Input.GetKeyDown(KeyCode.E) && haskey)
+        {
+            keyinventory.SetActive(false);
+            haskey = false;
+            
+        }
     }
-   
-
-
 }
+
+

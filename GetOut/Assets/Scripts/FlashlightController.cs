@@ -11,8 +11,8 @@ public class FlashlightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Police = GetComponentInParent<GameObject>();
-        Polscript = GetComponentInParent<PoliceController>();
+        Police = GetComponent<GameObject>();
+        Polscript = GetComponent<PoliceController>();
     }
 
     // Update is called once per frame

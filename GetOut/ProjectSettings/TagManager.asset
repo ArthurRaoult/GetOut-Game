@@ -8,6 +8,8 @@ TagManager:
   - PlayerTag
   - Trashcan
   - Walltypeobj
+  - Door
+  - KeyGround
   layers:
   - Default
   - TransparentFX
