@@ -7,7 +7,7 @@ public class PoliceController : MonoBehaviour
     public float Pospeed = 50f;
     public GameObject policeman;
     public SpriteRenderer Policestate;
-    private float Direction = 1f;
+    public float Direction = 1f;
     // Start is called before the first frame update
     void Start()
     {
