@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour
             haskey = true;
             keyinventory.SetActive(true);
             keyground.SetActive(false);
+            Destroy(keyground);
         }
         if ((collision.gameObject.tag == "Door") && Input.GetKeyDown(KeyCode.E) && haskey)
         {
