@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         //Jump Mechanic
 
-        if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.W))) && isOnGround)
+        if ((Input.GetKeyDown(KeyCode.W)) && isOnGround)
         {
             playerRb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             isOnGround = false;
