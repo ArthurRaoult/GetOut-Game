@@ -5,7 +5,7 @@ using UnityEngine;
 public class CamFollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset = new Vector3(0f, 0, -2);
+    private Vector3 offset = new Vector3(0f, 0, -20);
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,10 @@ public class CamFollowPlayer : MonoBehaviour
     {
         if (player.transform.position.x > 0)
         {
-            transform.position = new Vector3(player.transform.position.x, offset.y, -2);
+            transform.position = new Vector3(player.transform.position.x, offset.y, -20);
         } else if (player.transform.position.x < 0)
         {
-            transform.position = new Vector3(0, offset.y, -2);
+            transform.position = new Vector3(0, offset.y, -20);
         }
     }
 }
