@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb;
     public bool isOnGround = true;
     private BoxCollider2D PlayerBox;
-
+    public float Direction = 1;
+    public bool isCrouching = true;
     //invisibility
     public bool Invis = false;
     private float InvisStart = 0f;
@@ -23,17 +24,22 @@ public class PlayerController : MonoBehaviour
     public bool hastrash = false;
     public GameObject trashcan;
     public GameObject player;
-    public BoxCollider2D TrashCollision;
+    private BoxCollider2D TrashCollision;
+    public GameObject trashhitBox;
     //Key and Door
     public bool haskey = false;
     public GameObject keyinventory;
     public GameObject keyground;
-    public BoxCollider2D DoorCollision;
+    private BoxCollider2D DoorCollision;
+    public GameObject Door;
     //can throw
     public GameObject Player;
     public GameObject TheCan;
     public bool CanThrowing;
-    public Rigidbody2D canRb;
+    private Rigidbody2D canRb;
+    //Vent
+    public GameObject Vent;
+    private BoxCollider2D VentCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +47,17 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         PlayerBox = GetComponent<BoxCollider2D>();
         PlayerState = GetComponent<SpriteRenderer>();
-        TrashCollision = GetComponentInChildren<BoxCollider2D>();
+        TrashCollision = trashhitBox.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>();
+        DoorCollision = Door.GetComponent<BoxCollider2D>();
+        VentCollision = Vent.GetComponent<BoxCollider2D>();
+        
         trashcan.SetActive(false);
         keyinventory.SetActive(false);
         //can throw
         Player.GetComponent<GameObject>();
-        canRb.GetComponent<Rigidbody2D>();
         CanThrowing = false;
+        canRb = TheCan.GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -60,9 +70,11 @@ public class PlayerController : MonoBehaviour
             //Look left and right
             if (horizontalInput < 0) {
                 PlayerState.flipX = true;
+                Direction = -1;
             } else if(horizontalInput > 0)
             {
                 PlayerState.flipX = false;
+                Direction = 1;
             }
         }
         
@@ -75,11 +87,13 @@ public class PlayerController : MonoBehaviour
                 transform.localScale = new Vector3(1,1,1);
                 PlayerBox.transform.localScale = new Vector3(1, 1, 1);
                 playerSpeed = 0.5f;
+                isCrouching = true;
             }else if (crouchInput >= 0)
             {
                 transform.localScale = new Vector3(1, 2, 1);
                 PlayerBox.transform.localScale = new Vector3(1, 2, 1);
                 playerSpeed = 1;
+                isCrouching = false;
             }
         }
 
@@ -118,7 +132,12 @@ public class PlayerController : MonoBehaviour
         {
             trashcan.SetActive(false);
             Debug.Log("Input Updated");
-            Instantiate(TheCan, Player.transform.position, TheCan.transform.rotation);
+            if(PlayerState.flipX == false)
+            Instantiate(TheCan, Player.transform.position, new Quaternion(0,0,0,0));
+            else
+            {
+                Instantiate(TheCan, Player.transform.position, new Quaternion(0, 180, 0, 0));
+            }
             CanThrowing = true;
             canRb.transform.Translate(new Vector3(2f, 0, 0));
             hastrash = false;
@@ -150,13 +169,17 @@ public class PlayerController : MonoBehaviour
             haskey = true;
             keyinventory.SetActive(true);
             keyground.SetActive(false);
-            Destroy(keyground);
+            Destroy(GameObject.FindWithTag("KeyGround"));
         }
         if ((collision.gameObject.tag == "Door") && Input.GetKeyDown(KeyCode.E) && haskey)
         {
             keyinventory.SetActive(false);
             haskey = false;
-            
+            Destroy(Player);
+        }
+        if ((collision.gameObject.tag == "Vent") && (isCrouching == true) && Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(Player);
         }
     }
 }

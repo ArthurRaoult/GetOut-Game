@@ -8,10 +8,14 @@ public class PoliceController : MonoBehaviour
     public GameObject policeman;
     public SpriteRenderer Policestate;
     public float Direction = 1f;
+    public GameObject Player;
+    private PlayerController Pcscript;
+    public GameObject KeyGround;
     // Start is called before the first frame update
     void Start()
     {
         Policestate = GetComponent<SpriteRenderer>();
+        Pcscript = Player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -29,4 +33,14 @@ public class PoliceController : MonoBehaviour
             Direction = -Direction;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("CanThrow"))
+        {
+            Destroy(policeman);
+            Instantiate(KeyGround, policeman.transform.position + new Vector3 (0, -0.5f, 0), policeman.transform.rotation);
+            KeyGround.SetActive(true);
+        }
+    }
+        
 }

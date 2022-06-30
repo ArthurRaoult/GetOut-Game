@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 4107487404495636551}
   m_Layer: 0
   m_Name: The Ops LVL 1
-  m_TagString: Untagged
+  m_TagString: Police
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +200,8 @@ MonoBehaviour:
   policeman: {fileID: 4107487404495636547}
   Policestate: {fileID: 4107487404495636549}
   Direction: 1
+  Player: {fileID: 6200340821056069502, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
+  KeyGround: {fileID: 594374469257098630, guid: 5f65158855fa14b359ebadfa2f6086cc, type: 3}
 --- !u!50 &4107487404495636550
 Rigidbody2D:
   serializedVersion: 4

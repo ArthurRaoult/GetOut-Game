@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6566687775524021280}
   m_Layer: 0
   m_Name: Can Throw
-  m_TagString: Untagged
+  m_TagString: CanThrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,5 +145,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6200340821056069502, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
-  Pcscript: {fileID: 0}
   ThrowSpeed: 10
+  RotationSpeed: 10
