@@ -59,10 +59,10 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector2.right  * playerSpeed * horizontalInput / 10);
             //Look left and right
             if (horizontalInput < 0) {
-                PlayerState.flipX = true;
+                PlayerState.flipX = false;
             } else if(horizontalInput > 0)
             {
-                PlayerState.flipX = false;
+                PlayerState.flipX = true;
             }
         }
         
@@ -72,13 +72,13 @@ public class PlayerController : MonoBehaviour
             float crouchInput = Input.GetAxis("Vertical");
             if (crouchInput < 0)
             {
-                transform.localScale = new Vector3(1,1,1);
-                PlayerBox.transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(1,.5f,1);
+                PlayerBox.transform.localScale = new Vector3(1, .5f, 1);
                 playerSpeed = 0.5f;
             }else if (crouchInput >= 0)
             {
-                transform.localScale = new Vector3(1, 2, 1);
-                PlayerBox.transform.localScale = new Vector3(1, 2, 1);
+                transform.localScale = new Vector3(1, 1, 1);
+                PlayerBox.transform.localScale = new Vector3(1, 1, 1);
                 playerSpeed = 1;
             }
         }
