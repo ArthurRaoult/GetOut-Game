@@ -222,15 +222,16 @@ MonoBehaviour:
   jumpHeight: 12
   isOnGround: 1
   Direction: 1
+  isCrouching: 1
   Invis: 0
   translu: 0
   Playercolorchanger: {r: 1, g: 1, b: 1, a: 1}
   hastrash: 0
-  trashcan: {fileID: 9132458774713600950, guid: a020aa677679a430798c2af47392d8b9, type: 3}
+  trashcan: {fileID: 6302349559070692449, guid: a020aa677679a430798c2af47392d8b9, type: 3}
   player: {fileID: 6200340821056069502}
   trashhitBox: {fileID: 386251712376409454, guid: 6c36a267d9ba14a47b85a562420c5e6d, type: 3}
   haskey: 0
-  keyinventory: {fileID: 5478602010599305463, guid: fb99e023160b0422196deda5891b3995, type: 3}
+  keyinventory: {fileID: 6633270316030672142, guid: fb99e023160b0422196deda5891b3995, type: 3}
   keyground: {fileID: 594374469257098630, guid: 5f65158855fa14b359ebadfa2f6086cc, type: 3}
   Door: {fileID: 8527442279781929233, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
   Player: {fileID: 6200340821056069502}
