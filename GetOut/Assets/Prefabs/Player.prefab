@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6200340821056069502}
-  Pcscript: {fileID: 6200340821056069500}
 --- !u!1 &6200340821056069502
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +221,7 @@ MonoBehaviour:
   jumpHeight: 12
   isOnGround: 1
   Invis: 0
-  translu: 0
+  translu: 0.25
   Playercolorchanger: {r: 1, g: 1, b: 1, a: 1}
   hastrash: 0
   trashcan: {fileID: 6302349559070692449, guid: a020aa677679a430798c2af47392d8b9, type: 3}
@@ -232,6 +231,11 @@ MonoBehaviour:
   keyinventory: {fileID: 6633270316030672142, guid: fb99e023160b0422196deda5891b3995, type: 3}
   keyground: {fileID: 594374469257098630, guid: 5f65158855fa14b359ebadfa2f6086cc, type: 3}
   DoorCollision: {fileID: 0}
+  Door: {fileID: 8527442279781929233, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
+  DoorActive: 0
+  VentCollision: {fileID: 0}
+  Vent: {fileID: 5005740819513679522, guid: 430e11f8a113b4a05875ac9b2be45b1a, type: 3}
+  VentActive: 0
   Player: {fileID: 6200340821056069502}
   TheCan: {fileID: 6566687775524021293, guid: 5731654759ea94727b718ba2edc7778f, type: 3}
   CanThrowing: 0

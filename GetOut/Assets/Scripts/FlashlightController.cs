@@ -12,7 +12,7 @@ public class FlashlightController : MonoBehaviour
     void Start()
     {
         Police = GetComponent<GameObject>();
-        Polscript = GetComponent<PoliceController>();
+        Polscript = Police.GetComponent<PoliceController>();
     }
 
     // Update is called once per frame

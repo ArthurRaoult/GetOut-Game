@@ -29,12 +29,19 @@ public class PlayerController : MonoBehaviour
     public GameObject keyinventory;
     public GameObject keyground;
     public BoxCollider2D DoorCollision;
+    public GameObject Door;
+    public bool DoorActive;
+    //Vent
+    public BoxCollider2D VentCollision;
+    public GameObject Vent;
+    public bool VentActive;
+    private bool isCrouching;
     //can throw
     public GameObject Player;
     public GameObject TheCan;
     public bool CanThrowing;
     public Rigidbody2D canRb;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +51,8 @@ public class PlayerController : MonoBehaviour
         TrashCollision = GetComponentInChildren<BoxCollider2D>();
         trashcan.SetActive(false);
         keyinventory.SetActive(false);
+        DoorCollision = Door.GetComponent<BoxCollider2D>();
+        VentCollision = Vent.GetComponent<BoxCollider2D>();
         //can throw
         Player.GetComponent<GameObject>();
         canRb.GetComponent<Rigidbody2D>();
@@ -75,11 +84,13 @@ public class PlayerController : MonoBehaviour
                 transform.localScale = new Vector3(1,.5f,1);
                 PlayerBox.transform.localScale = new Vector3(1, .5f, 1);
                 playerSpeed = 0.5f;
+                isCrouching = true;
             }else if (crouchInput >= 0)
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 PlayerBox.transform.localScale = new Vector3(1, 1, 1);
                 playerSpeed = 1;
+                isCrouching = false;
             }
         }
 
@@ -156,7 +167,11 @@ public class PlayerController : MonoBehaviour
         {
             keyinventory.SetActive(false);
             haskey = false;
-            
+            DoorActive = true;
+        }
+        if ((collision.gameObject.tag == "Vent") && Input.GetKeyDown(KeyCode.E) && isCrouching == true)
+        {
+            VentActive = true;
         }
     }
 }

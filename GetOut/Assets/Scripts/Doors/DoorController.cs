@@ -1,33 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class FlashlightHitbox : MonoBehaviour
+public class DoorController : MonoBehaviour
 {
-    
     public GameObject Player;
     private PlayerController Pcscript;
-    private PolygonCollider2D Flhitbox;
+    public string nextstageName;
+    
     // Start is called before the first frame update
     void Start()
     {
         Pcscript = Player.GetComponent<PlayerController>();
-        Flhitbox = GetComponent<PolygonCollider2D>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Pcscript.Invis == true)
+        if (Pcscript.DoorActive == true)
         {
-            Flhitbox.enabled = false;
-            
-        }
-        else
-        {
-            Flhitbox.enabled = true;
+            SceneManager.LoadScene(nextstageName);
+            Pcscript.DoorActive = false;
+            Debug.Log("escape");
         }
     }
-  
 }

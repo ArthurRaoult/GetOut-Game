@@ -10,6 +10,8 @@ TagManager:
   - Walltypeobj
   - Door
   - KeyGround
+  - Vent
+  - Police
   layers:
   - Default
   - TransparentFX

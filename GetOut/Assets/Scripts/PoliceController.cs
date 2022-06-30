@@ -12,6 +12,8 @@ public class PoliceController : MonoBehaviour
     void Start()
     {
         Policestate = GetComponent<SpriteRenderer>();
+        Policestate.flipX = false;
+        Direction = -1f;
     }
 
     // Update is called once per frame

@@ -131,20 +131,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6200340821056069500, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 1119088065}
+    - target: {fileID: 6200340821056069500, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
       propertyPath: keyground
       value: 
       objectReference: {fileID: 1182173893}
     - target: {fileID: 6200340821056069500, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
       propertyPath: keyinventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 651759039}
     - target: {fileID: 6200340821056069504, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6200340821056069504, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200340821056069504, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.04
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 8974855928068991037, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
       propertyPath: m_RootOrder
@@ -509,17 +517,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2541555833093667086, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541555833093667086, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6215131190174203400, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6215131190174203400, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.24
+      value: 35.2
       objectReference: {fileID: 0}
     - target: {fileID: 6215131190174203400, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0439806
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 6215131190174203400, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -555,6 +571,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8527442279781929233, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
       propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527442279781929233, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
+      propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -725,6 +745,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &651759039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6633270316030672142, guid: fb99e023160b0422196deda5891b3995, type: 3}
+  m_PrefabInstance: {fileID: 1855112630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &719266620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1206,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c900027928d734532a58fd9aa12cbbb2, type: 3}
+--- !u!1 &1119088065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8527442279781929233, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
+  m_PrefabInstance: {fileID: 532871241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1119088066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119088065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23823f665a844826a594c71a66a85aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 405304701}
+  nextstageName: LevelTwo
 --- !u!1 &1182173893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 594374469257098630, guid: 5f65158855fa14b359ebadfa2f6086cc, type: 3}

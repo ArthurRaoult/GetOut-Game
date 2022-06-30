@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestingScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/Prison1/LevelFour.unity
+    guid: 6942a159d1d9e47f696fff5638535788
+  - enabled: 1
+    path: Assets/Scenes/Levels/Prison1/LevelOne.unity
+    guid: 3f2554bc23224475386c371aa0f51187
+  - enabled: 1
+    path: Assets/Scenes/Levels/Prison1/LevelThree.unity
+    guid: 52efb3ea272fd4958a3000816603040f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Prison1/LevelTwo.unity
+    guid: 5232feabd980c4356ac99743eabd5852
   m_configObjects: {}
