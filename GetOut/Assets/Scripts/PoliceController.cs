@@ -8,7 +8,8 @@ public class PoliceController : MonoBehaviour
     public GameObject policeman;
     public SpriteRenderer Policestate;
     public float Direction = 1f;
-    public GameObject FlashlightCollider;
+    public GameObject KeyGround;
+    private GameObject KeyClone;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +37,10 @@ public class PoliceController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Physics2D.IgnoreCollision(FlashlightCollider.gameObject.GetComponent<PolygonCollider2D>(), GetComponent<CircleCollider2D>());
         if (collision.gameObject.CompareTag("CanThrow"))
         {
-            Destroy(gameObject);
+            Destroy(policeman.gameObject);
+            Instantiate(KeyGround, policeman.transform.position - new Vector3 (0, -0.5f, 0), policeman.transform.rotation).SetActive(true);
         }   
     }
 

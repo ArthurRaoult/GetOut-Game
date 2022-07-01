@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float playerSpeed = 100f;
@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D DoorCollision;
     public GameObject Door;
     public bool DoorActive;
+    private GameObject KeyClone;
     //Vent
     public BoxCollider2D VentCollision;
     public GameObject Vent;
@@ -167,6 +168,8 @@ public class PlayerController : MonoBehaviour
             keyinventory.SetActive(true);
             keyground.SetActive(false);
             Destroy(keyground);
+            KeyClone = (GameObject.Find("KeyGround(Clone)"));
+            Destroy(KeyClone);
         }
         if ((collision.gameObject.tag == "Door") && Input.GetKeyDown(KeyCode.E) && haskey)
         {
@@ -178,7 +181,12 @@ public class PlayerController : MonoBehaviour
         {
             VentActive = true;
         }
-
+        {
+        if (collision.gameObject.tag == "Flash")
+            {
+                SceneManager.LoadScene("RestartScene");
+            }
+        }
        
     }
 }

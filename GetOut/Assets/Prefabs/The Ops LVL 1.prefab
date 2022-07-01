@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3175909621507355490}
   m_Layer: 0
   m_Name: Flash
-  m_TagString: Untagged
+  m_TagString: Flash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   policeman: {fileID: 6949615030820722066}
   Policestate: {fileID: 570144191213911605}
   Direction: 1
+  KeyGround: {fileID: 594374469257098630, guid: 5f65158855fa14b359ebadfa2f6086cc, type: 3}
 --- !u!50 &7288990482299439038
 Rigidbody2D:
   serializedVersion: 4
