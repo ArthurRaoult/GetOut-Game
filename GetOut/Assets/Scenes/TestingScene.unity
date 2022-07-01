@@ -709,6 +709,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4165539496731229224, guid: 430e11f8a113b4a05875ac9b2be45b1a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1148941917}
     - target: {fileID: 3161151383724386929, guid: 430e11f8a113b4a05875ac9b2be45b1a, type: 3}
       propertyPath: m_Name
       value: Vent
@@ -890,11 +894,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6302349559070692449, guid: a020aa677679a430798c2af47392d8b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6302349559070692462, guid: a020aa677679a430798c2af47392d8b9, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302349559070692462, guid: a020aa677679a430798c2af47392d8b9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302349559070692462, guid: a020aa677679a430798c2af47392d8b9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6302349559070692462, guid: a020aa677679a430798c2af47392d8b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,6 +976,10 @@ PrefabInstance:
     - target: {fileID: 6566687775524021293, guid: 5731654759ea94727b718ba2edc7778f, type: 3}
       propertyPath: m_Name
       value: Can Throw
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566687775524021293, guid: 5731654759ea94727b718ba2edc7778f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6566687775524021294, guid: 5731654759ea94727b718ba2edc7778f, type: 3}
       propertyPath: m_RootOrder

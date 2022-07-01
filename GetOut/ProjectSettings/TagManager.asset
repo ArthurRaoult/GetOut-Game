@@ -12,6 +12,7 @@ TagManager:
   - KeyGround
   - Vent
   - Police
+  - CanThrow
   layers:
   - Default
   - TransparentFX

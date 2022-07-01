@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 6566687775524021280}
   m_Layer: 0
   m_Name: Can Throw
-  m_TagString: Untagged
+  m_TagString: CanThrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6566687775524021294
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6566687775524021293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 176, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!61 &6566687775524021292
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,5 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6200340821056069502, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
-  Pcscript: {fileID: 0}
   ThrowSpeed: 10
+  RotationSpeed: 10
+  PoliceDead: 0
+  Police: {fileID: 6949615030820722066, guid: b9dfbcccb93d7426ab22bb1aec2f6363, type: 3}

@@ -854,6 +854,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &685295916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6302349559070692449, guid: a020aa677679a430798c2af47392d8b9, type: 3}
+  m_PrefabInstance: {fileID: 1282987908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &721520200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,6 +1050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c7abfcfd533443db623f26f72722ef, type: 3}
+--- !u!1 &987822878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6633270316030672142, guid: fb99e023160b0422196deda5891b3995, type: 3}
+  m_PrefabInstance: {fileID: 1744374529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1132380211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1128,6 +1138,10 @@ PrefabInstance:
     - target: {fileID: 6302349559070692449, guid: a020aa677679a430798c2af47392d8b9, type: 3}
       propertyPath: m_Name
       value: CanInv
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302349559070692449, guid: a020aa677679a430798c2af47392d8b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6302349559070692462, guid: a020aa677679a430798c2af47392d8b9, type: 3}
       propertyPath: m_RootOrder
@@ -2129,6 +2143,14 @@ PrefabInstance:
       propertyPath: translu
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6200340821056069500, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
+      propertyPath: trashcan
+      value: 
+      objectReference: {fileID: 685295916}
+    - target: {fileID: 6200340821056069500, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
+      propertyPath: keyinventory
+      value: 
+      objectReference: {fileID: 987822878}
     - target: {fileID: 6200340821056069502, guid: d27a43f805b504a8b8450bc950bad31c, type: 3}
       propertyPath: m_Name
       value: Player

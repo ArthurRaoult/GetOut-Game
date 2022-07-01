@@ -55,8 +55,8 @@ public class PlayerController : MonoBehaviour
         VentCollision = Vent.GetComponent<BoxCollider2D>();
         //can throw
         Player.GetComponent<GameObject>();
-        canRb.GetComponent<Rigidbody2D>();
-        CanThrowing = false;
+        canRb = TheCan.GetComponent<Rigidbody2D>();
+        CanThrowing = true;
     }
 
     // Update is called once per frame
@@ -124,15 +124,20 @@ public class PlayerController : MonoBehaviour
         trashcan.transform.position = player.transform.position + new Vector3(-0.6f, 1.8f, 0);
         //Key Movement
         keyinventory.transform.position = player.transform.position + new Vector3(0.6f, 1.8f, 0);
-        //Key Throw
-        if (Input.GetKeyDown(KeyCode.Space) && hastrash == true) 
+        //Trash Throw
+        if (Input.GetKeyDown(KeyCode.Space) && hastrash == true)
         {
             trashcan.SetActive(false);
             Debug.Log("Input Updated");
-            Instantiate(TheCan, Player.transform.position, TheCan.transform.rotation);
+            if (PlayerState.flipX == false) {
+                Instantiate(TheCan, Player.transform.position, new Quaternion(0, 180, 0, 0)).SetActive(true);
+            } else
+            {
+                Instantiate(TheCan, Player.transform.position, new Quaternion(0, 0, 0, 0)).SetActive(true);
+             }
             CanThrowing = true;
             canRb.transform.Translate(new Vector3(2f, 0, 0));
-            hastrash = false;
+            hastrash = true;
         }
         //Door Unlock
 
@@ -173,6 +178,8 @@ public class PlayerController : MonoBehaviour
         {
             VentActive = true;
         }
+
+       
     }
 }
 
