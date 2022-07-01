@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Prison1/LevelTwo.unity
     guid: 5232feabd980c4356ac99743eabd5852
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8864700e5846f401c8bae4f2d5f6f420
+  - enabled: 1
+    path: Assets/Scenes/RestartScene.unity
+    guid: bc76796f48c4b4bc29b69b8eba2aff20
   m_configObjects: {}
