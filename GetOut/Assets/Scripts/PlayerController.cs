@@ -124,12 +124,18 @@ public class PlayerController : MonoBehaviour
         trashcan.transform.position = player.transform.position + new Vector3(-0.6f, 1.8f, 0);
         //Key Movement
         keyinventory.transform.position = player.transform.position + new Vector3(0.6f, 1.8f, 0);
-        //Key Throw
+        //Trash Throw
         if (Input.GetKeyDown(KeyCode.Space) && hastrash == true) 
         {
             trashcan.SetActive(false);
             Debug.Log("Input Updated");
-            Instantiate(TheCan, Player.transform.position, TheCan.transform.rotation);
+            
+            if (PlayerState.flipX == false)
+                Instantiate(TheCan, Player.transform.position, new Quaternion(0, 0, 0, 0));
+            else
+            {
+                Instantiate(TheCan, Player.transform.position, new Quaternion(0, 180, 0, 0));
+            }
             CanThrowing = true;
             canRb.transform.Translate(new Vector3(2f, 0, 0));
             hastrash = false;

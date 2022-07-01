@@ -678,6 +678,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3175909621507355490, guid: b9dfbcccb93d7426ab22bb1aec2f6363, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1373495725}
     - target: {fileID: 6949615030820722066, guid: b9dfbcccb93d7426ab22bb1aec2f6363, type: 3}
       propertyPath: m_Name
       value: The Ops LVL 1
